@@ -1,0 +1,21 @@
+---
+-- host:
+    Individual Hosts:
+      mail.mycorp.local:
+      smtp.mycorp.local:
+      auth.mycorp.local:
+    children:
+        itlappsrv:
+          children:
+            London App servers:
+              host:
+                app01.ldn.mycorp.local:
+                app02.ldn.mycorp.local:
+            Texas App Servers:
+              host:
+                app03.tx.mycorp.local:
+                app04.tx.mycorp.local:
+        Domain Controllers:
+          childern:
+            dc01.mycorp.local:
+            dc02.mycorp.local:        

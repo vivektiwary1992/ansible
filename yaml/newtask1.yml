@@ -1,0 +1,17 @@
+---
+- hosts: all
+  remote_user: ubuntu
+  become: yes
+  tasks:
+    - name: install apache2
+      yum:
+        name: apache2
+        state: installed
+    - name: 
+      shell:
+        cmd: echo "hello from echo chalnge" > /var/www/html/index.html
+
+    - name: reload apache2
+      service:
+        name: apache2
+        state: restarted
